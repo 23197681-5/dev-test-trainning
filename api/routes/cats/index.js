@@ -1,5 +1,3 @@
-const { send } = require("express/lib/response");
-const res = require("express/lib/response");
 const catsRouter = require("express").Router();
 const sequelize = require('./catsTable')
 
@@ -24,4 +22,21 @@ catsRouter.get("/:id", async( req, res)=>{
 })
 
 
+catsRouter.put("/:id", async( req, res)=>{
+    const sentId = req.params.id;
+    var cat = await Cat.findOne({id: sentId})
+    cat.name = req.params.name;
+    cat.purring = req.params.purring;
+    cat.years - req.params.years;
+    await cat.save();
+    cat = await Cat.findOne({id: sentId})
+    res.send("Updated", cat);
+})
+
+catsRouter.delete("/:id", async(req, res)=>{
+    const sentId = req.params.id;
+    Cat.destroy({id: sentId});
+    res.send("removed")
+
+})
 module.exports = catsRouter;
