@@ -1,0 +1,9 @@
+{
+    "database": {
+        "name": "jalasoftdb"
+
+    },
+    "app": {
+        "listen_port": 2222
+    }
+}
