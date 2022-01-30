@@ -5,15 +5,15 @@ class CatsTable extends Model {}
 CatsTable.init({
     name:{
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
     },
     years: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        // allowNull: false
     },
     purring:{
         type: DataTypes.BOOLEAN,
-        allowNull: false
+        // allowNull: false
     }
     //TODO:
 }, {
